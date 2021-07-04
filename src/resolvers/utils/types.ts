@@ -1,4 +1,4 @@
-import PokemonAPI from '../../data';
+import PokemonAPI from '../../data/pokemon';
 
 export type Pagination = {
   limit: number;
