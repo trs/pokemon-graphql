@@ -1,22 +1,18 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
+import { resolveResourceListFactory } from './utils/resolverFactory';
 
 import type { EggGroup } from '../generated/graphql';
-import type { Context } from './utils/types';
 
 const resolver: IResolvers = {
   EggGroup: {
-    pokemon_species: async (parent: EggGroup, _args, {dataSources}: Context) => {
-      return parent.pokemon_species.map(async (species) => {
-        return dataSources.pokemonAPI.pokemonSpecies(species.name);
-      })
-    }
+    pokemon_species: resolveResourceListFactory<EggGroup>((parent) => parent.pokemon_species)
   },
 
   Query: {
-    eggGroupList: listFactory('eggGroupList'),
-    eggGroup: singleFactory('eggGroup')
+    eggGroupList: queryListFactory('eggGroupList'),
+    eggGroup: queryFactory('eggGroup')
   }
 };
 

@@ -1,6 +1,6 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { PokemonForm } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -16,8 +16,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    pokemonFormList: listFactory('pokemonFormList'),
-    pokemonForm: singleFactory('pokemonForm')
+    pokemonFormList: queryListFactory('pokemonFormList'),
+    pokemonForm: queryFactory('pokemonForm')
   }
 };
 

@@ -1,7 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
 import { getAPIResourceID } from './utils/getAPIResourcePath';
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { Item, ItemHolderPokemon, ItemHolderPokemonVersionDetail } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -38,8 +38,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    itemList: listFactory('itemList'),
-    item: singleFactory('item')
+    itemList: queryListFactory('itemList'),
+    item: queryFactory('item')
   }
 };
 

@@ -9,7 +9,7 @@ export default gql`
   }
 
 type Query {
-  itemPocketList(limit: Int!, offset: Int!): PaginationListItemPocket
+  itemPocketList(limit: Int!, offset: Int): PaginationListItemPocket
   itemPocket(id: Int!): ItemPocket
 }
 

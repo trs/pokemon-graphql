@@ -1,6 +1,6 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { Nature, NatureStatChange, MoveBattleStylePreference } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -32,8 +32,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    natureList: listFactory('natureList'),
-    nature: singleFactory('nature')
+    natureList: queryListFactory('natureList'),
+    nature: queryFactory('nature')
   }
 };
 

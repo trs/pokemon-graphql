@@ -37,7 +37,7 @@ export default gql`
   }
 
   type Query {
-    evolutionChainList(limit: Int!, offset: Int!): PaginationListEvolutionChain
+    evolutionChainList(limit: Int!, offset: Int): PaginationListEvolutionChain
     evolutionChain(id: Int!): EvolutionChain
   }
 

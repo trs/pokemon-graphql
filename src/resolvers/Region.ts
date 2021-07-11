@@ -1,6 +1,6 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { Region } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -28,8 +28,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    regionList: listFactory('regionList'),
-    region: singleFactory('region')
+    regionList: queryListFactory('regionList'),
+    region: queryFactory('region')
   }
 };
 

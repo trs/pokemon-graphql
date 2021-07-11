@@ -1,6 +1,6 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { Version } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -13,8 +13,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    versionList: listFactory('versionList'),
-    version: singleFactory('version')
+    versionList: queryListFactory('versionList'),
+    version: queryFactory('version')
   }
 };
 

@@ -9,7 +9,7 @@ export default gql`
   }
 
 type Query {
-  pokemonColorList(limit: Int!, offset: Int!): PaginationListPokemonColor
+  pokemonColorList(limit: Int!, offset: Int): PaginationListPokemonColor
   pokemonColor(id: Int!): PokemonColor
 }
 

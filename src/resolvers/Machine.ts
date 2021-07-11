@@ -1,6 +1,6 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { Machine } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -19,8 +19,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    machineList: listFactory('machineList'),
-    machine: singleFactory('machine')
+    machineList: queryListFactory('machineList'),
+    machine: queryFactory('machine')
   }
 };
 

@@ -27,7 +27,7 @@ export default gql`
   }
 
 type Query {
-  locationAreaList(limit: Int!, offset: Int!): PaginationListLocationArea
+  locationAreaList(limit: Int!, offset: Int): PaginationListLocationArea
   locationArea(id: Int!): LocationArea
 }
 

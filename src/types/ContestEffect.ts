@@ -10,7 +10,7 @@ export default gql`
   }
 
   type Query {
-    contestEffectList(limit: Int!, offset: Int!): PaginationListContestEffect
+    contestEffectList(limit: Int!, offset: Int): PaginationListContestEffect
     contestEffect(id: Int!): ContestEffect
   }
 

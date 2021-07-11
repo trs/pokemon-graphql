@@ -1,6 +1,6 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { LocationArea, EncounterMethodRate, EncounterVersionDetails, PokemonEncounter } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -28,8 +28,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    locationAreaList: listFactory('locationAreaList'),
-    locationArea: singleFactory('locationArea')
+    locationAreaList: queryListFactory('locationAreaList'),
+    locationArea: queryFactory('locationArea')
   }
 };
 

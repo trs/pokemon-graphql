@@ -19,7 +19,7 @@ export default gql`
   }
 
 type Query {
-  pokeathlonStatList(limit: Int!, offset: Int!): PaginationListPokeathlonStat
+  pokeathlonStatList(limit: Int!, offset: Int): PaginationListPokeathlonStat
   pokeathlonStat(id: Int!): PokeathlonStat
 }
 

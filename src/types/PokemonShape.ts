@@ -15,7 +15,7 @@ export default gql`
   }
 
 type Query {
-  pokemonShapeList(limit: Int!, offset: Int!): PaginationListPokemonShape
+  pokemonShapeList(limit: Int!, offset: Int): PaginationListPokemonShape
   pokemonShape(id: Int!): PokemonShape
 }
 

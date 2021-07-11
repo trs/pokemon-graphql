@@ -9,7 +9,7 @@ export default gql`
   }
 
 type Query {
-  moveAilmentList(limit: Int!, offset: Int!): PaginationListMoveAilment
+  moveAilmentList(limit: Int!, offset: Int): PaginationListMoveAilment
   moveAilment(id: Int!): MoveAilment
 }
 

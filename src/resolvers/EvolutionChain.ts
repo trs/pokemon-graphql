@@ -1,6 +1,6 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { EvolutionChain, ChainLink, EvolutionDetail } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -67,8 +67,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    evolutionChainList: listFactory('evolutionChainList'),
-    evolutionChain: singleFactory('evolutionChain')
+    evolutionChainList: queryListFactory('evolutionChainList'),
+    evolutionChain: queryFactory('evolutionChain')
   }
 };
 

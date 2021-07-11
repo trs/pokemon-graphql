@@ -1,7 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
 import { getAPIResourceID } from './utils/getAPIResourcePath';
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { Stat, MoveStatAffect, NatureStatAffectSets } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -39,8 +39,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    statList: listFactory('statList'),
-    stat: singleFactory('stat')
+    statList: queryListFactory('statList'),
+    stat: queryFactory('stat')
   }
 };
 

@@ -1,6 +1,6 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { Gender, PokemonSpeciesGender } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -20,8 +20,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    genderList: listFactory('genderList'),
-    gender: singleFactory('gender')
+    genderList: queryListFactory('genderList'),
+    gender: queryFactory('gender')
   }
 };
 

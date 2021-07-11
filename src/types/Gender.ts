@@ -14,7 +14,7 @@ export default gql`
   }
 
   type Query {
-    genderList(limit: Int!, offset: Int!): PaginationListGender
+    genderList(limit: Int!, offset: Int): PaginationListGender
     gender(id: Int!): Gender
   }
 

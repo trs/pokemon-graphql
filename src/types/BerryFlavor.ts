@@ -4,7 +4,7 @@ export default gql`
   type BerryFlavor {
     id: Int!
     name: String!
-    berries: [BerryFlavorMap!]!
+    berries: PaginationListBerryFlavorMap!
     contest_type: ContestType!
     names: [Name!]!
   }
@@ -15,7 +15,7 @@ export default gql`
   }
 
   type Query {
-    berryFlavorList(limit: Int!, offset: Int!): PaginationListBerryFlavor
+    berryFlavorList(limit: Int!, offset: Int): PaginationListBerryFlavor
     berryFlavor(id: Int!): BerryFlavor
   }
 

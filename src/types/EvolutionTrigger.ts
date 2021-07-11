@@ -9,7 +9,7 @@ export default gql`
   }
 
   type Query {
-    evolutionTriggerList(limit: Int!, offset: Int!): PaginationListEvolutionTrigger
+    evolutionTriggerList(limit: Int!, offset: Int): PaginationListEvolutionTrigger
     evolutionTrigger(id: Int!): EvolutionTrigger
   }
 

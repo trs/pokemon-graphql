@@ -10,7 +10,7 @@ export default gql`
   }
 
 type Query {
-  moveLearnMethodList(limit: Int!, offset: Int!): PaginationListMoveLearnMethod
+  moveLearnMethodList(limit: Int!, offset: Int): PaginationListMoveLearnMethod
   moveLearnMethod(id: Int!): MoveLearnMethod
 }
 

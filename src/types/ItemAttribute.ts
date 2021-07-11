@@ -10,7 +10,7 @@ export default gql`
   }
 
   type Query {
-    itemAttributeList(limit: Int!, offset: Int!): PaginationListItemAttribute
+    itemAttributeList(limit: Int!, offset: Int): PaginationListItemAttribute
     itemAttribute(id: Int!): ItemAttribute
   }
 

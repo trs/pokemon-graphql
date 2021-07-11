@@ -25,7 +25,7 @@ export default gql`
   }
 
 type Query {
-  pokemonFormList(limit: Int!, offset: Int!): PaginationListPokemonForm
+  pokemonFormList(limit: Int!, offset: Int): PaginationListPokemonForm
   pokemonForm(id: Int!): PokemonForm
 }
 

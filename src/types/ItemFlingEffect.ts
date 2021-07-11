@@ -9,7 +9,7 @@ export default gql`
   }
 
   type Query {
-    itemFlingEffectList(limit: Int!, offset: Int!): PaginationListItemFlingEffect
+    itemFlingEffectList(limit: Int!, offset: Int): PaginationListItemFlingEffect
     itemFlingEffect(id: Int!): ItemFlingEffect
   }
 

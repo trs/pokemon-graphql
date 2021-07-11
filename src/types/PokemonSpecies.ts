@@ -53,7 +53,7 @@ export default gql`
   }
 
 type Query {
-  pokemonSpeciesList(limit: Int!, offset: Int!): PaginationListPokemonSpecies
+  pokemonSpeciesList(limit: Int!, offset: Int): PaginationListPokemonSpecies
   pokemonSpecies(id: Int!): PokemonSpecies
 }
 

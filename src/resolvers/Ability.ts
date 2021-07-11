@@ -1,17 +1,15 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
-import { resolveNamedResourceFactory } from './utils/resolverFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
+import { resolveResourceFactory, resolveResourceListFactory } from './utils/resolverFactory';
 
 import type { Ability, AbilityEffectChange, AbilityFlavorText, AbilityPokemon } from '../generated/graphql';
 import type { Context } from './utils/types';
 
 const resolver: IResolvers = {
   Ability: {
-    generation: resolveNamedResourceFactory<Ability>('generation', (parent) => parent.generation.name)
-    // generation: async (parent: Ability, _args, {dataSources}: Context) => {
-    //   return dataSources.pokemonAPI.generation(parent.generation.name);
-    // }
+    generation: resolveResourceFactory<Ability>('generation', (parent) => parent.generation.name),
+    pokemon: resolveResourceListFactory<Ability>((parent) => parent.pokemon)
   },
   AbilityEffectChange: {
     version_group: async (parent: AbilityEffectChange, _args, {dataSources}: Context) => {
@@ -33,8 +31,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    abilityList: listFactory('abilityList'),
-    ability: singleFactory('ability')
+    abilityList: queryListFactory('abilityList'),
+    ability: queryFactory('ability')
   }
 };
 

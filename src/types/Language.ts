@@ -11,7 +11,7 @@ export default gql`
   }
 
 type Query {
-  languageList(limit: Int!, offset: Int!): PaginationListLanguage
+  languageList(limit: Int!, offset: Int): PaginationListLanguage
   language(id: Int!): Language
 }
 

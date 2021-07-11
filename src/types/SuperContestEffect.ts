@@ -9,7 +9,7 @@ export default gql`
   }
 
   type Query {
-    superContestEffectList(limit: Int!, offset: Int!): PaginationListSuperContestEffect
+    superContestEffectList(limit: Int!, offset: Int): PaginationListSuperContestEffect
     superContestEffect(id: Int!): SuperContestEffect
   }
 

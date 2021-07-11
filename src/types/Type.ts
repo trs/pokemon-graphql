@@ -28,7 +28,7 @@ export default gql`
   }
 
 type Query {
-  typeList(limit: Int!, offset: Int!): PaginationListType
+  typeList(limit: Int!, offset: Int): PaginationListType
   type(id: Int!): Type
 }
 

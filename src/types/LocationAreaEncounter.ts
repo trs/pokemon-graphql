@@ -7,7 +7,7 @@ export default gql`
   }
 
   type Query {
-    locationAreaEncounterList(limit: Int!, offset: Int!): PaginationListLocationAreaEncounter
+    locationAreaEncounterList(limit: Int!, offset: Int): PaginationListLocationAreaEncounter
   }
 
   type PaginationListLocationAreaEncounter{

@@ -10,7 +10,7 @@ export default gql`
   }
 
 type Query {
-  moveDamageClassList(limit: Int!, offset: Int!): PaginationListMoveDamageClass
+  moveDamageClassList(limit: Int!, offset: Int): PaginationListMoveDamageClass
   moveDamageClass(id: Int!): MoveDamageClass
 }
 

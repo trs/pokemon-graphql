@@ -10,7 +10,7 @@ export default gql`
   }
 
 type Query {
-  moveTargetList(limit: Int!, offset: Int!): PaginationListMoveTarget
+  moveTargetList(limit: Int!, offset: Int): PaginationListMoveTarget
   moveTarget(id: Int!): MoveTarget
 }
 

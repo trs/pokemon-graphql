@@ -1,6 +1,6 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { MoveAilment } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -15,8 +15,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    moveAilmentList: listFactory('moveAilmentList'),
-    moveAilment: singleFactory('moveAilment')
+    moveAilmentList: queryListFactory('moveAilmentList'),
+    moveAilment: queryFactory('moveAilment')
   }
 };
 

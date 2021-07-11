@@ -1,6 +1,6 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 
 import type { Pokedex, PokemonEntry } from '../generated/graphql';
@@ -24,8 +24,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    pokedexList: listFactory('pokedexList'),
-    pokedex: singleFactory('pokedex')
+    pokedexList: queryListFactory('pokedexList'),
+    pokedex: queryFactory('pokedex')
   }
 };
 

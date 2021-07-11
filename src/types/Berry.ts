@@ -11,7 +11,7 @@ export default gql`
     smoothness: Int!
     soil_dryness: Int!
     firmness: BerryFirmness!
-    flavors: [BerryFlavorMap!]!
+    flavors(limit: Int!, offset: Int): PaginationListBerryFlavorMap!
     item: Item!
     natural_gift_type: Type!
   }
@@ -22,7 +22,7 @@ export default gql`
   }
 
   type Query {
-    berryList(limit: Int!, offset: Int!): PaginationListBerry
+    berryList(limit: Int!, offset: Int): PaginationListBerry
     berry(id: Int!): Berry
   }
 
@@ -32,4 +32,11 @@ export default gql`
     count: Int
     list: [Berry!]!
   }
+
+type PaginationListBerryFlavorMap {
+  offset: Int
+  limit: Int
+  count: Int
+  list: [BerryFlavorMap!]!
+}
 `;

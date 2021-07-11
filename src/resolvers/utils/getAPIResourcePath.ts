@@ -1,6 +1,10 @@
-import { APIResource } from "./types";
+import { APIResource, NamedResource } from "./types";
 
-const isAPIResourcePath = (resource: any): resource is APIResource => {
+export const isNamedResource = (resource: any): resource is NamedResource => {
+  return typeof resource === 'object' && typeof resource.name === 'string'
+}
+
+export const isAPIResourcePath = (resource: any): resource is APIResource => {
   return typeof resource === 'object' && typeof resource.url === 'string'
 }
 

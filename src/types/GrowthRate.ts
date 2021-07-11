@@ -16,7 +16,7 @@ export default gql`
   }
 
   type Query {
-    growthRateList(limit: Int!, offset: Int!): PaginationListGrowthRate
+    growthRateList(limit: Int!, offset: Int): PaginationListGrowthRate
     growthRate(id: Int!): GrowthRate
   }
 

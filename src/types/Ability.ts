@@ -10,7 +10,7 @@ export default gql`
     effect_entries: [VerboseEffect!]!
     effect_changes: [AbilityEffectChange!]!
     flavor_text_entries: [AbilityFlavorText!]!
-    pokemon: [AbilityPokemon!]!
+    pokemon(limit: Int!, offset: Int): PaginationListAbilityPokemon!
   }
 
   type AbilityEffectChange {
@@ -31,7 +31,7 @@ export default gql`
   }
 
   type Query {
-    abilityList(limit: Int!, offset: Int!): PaginationListAbility
+    abilityList(limit: Int!, offset: Int): PaginationListAbility
     ability(id: Int!): Ability
   }
 
@@ -40,5 +40,12 @@ export default gql`
     limit: Int
     count: Int
     list: [Ability!]!
+  }
+
+  type PaginationListAbilityPokemon {
+    offset: Int
+    limit: Int
+    count: Int
+    list: [AbilityPokemon!]!
   }
 `;

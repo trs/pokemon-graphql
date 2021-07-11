@@ -25,7 +25,7 @@ export default gql`
   }
 
 type Query {
-  natureList(limit: Int!, offset: Int!): PaginationListNature
+  natureList(limit: Int!, offset: Int): PaginationListNature
   nature(id: Int!): Nature
 }
 

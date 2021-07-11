@@ -15,7 +15,7 @@ export default gql`
   }
 
 type Query {
-  palParkAreaList(limit: Int!, offset: Int!): PaginationListPalParkArea
+  palParkAreaList(limit: Int!, offset: Int): PaginationListPalParkArea
   palParkArea(id: Int!): PalParkArea
 }
 

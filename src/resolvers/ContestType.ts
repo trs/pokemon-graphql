@@ -1,6 +1,6 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { ContestType, ContestName } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -18,8 +18,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    contestTypeList: listFactory('contestTypeList'),
-    contestType: singleFactory('contestType')
+    contestTypeList: queryListFactory('contestTypeList'),
+    contestType: queryFactory('contestType')
   }
 };
 

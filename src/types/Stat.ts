@@ -29,7 +29,7 @@ export default gql`
   }
 
 type Query {
-  statList(limit: Int!, offset: Int!): PaginationListStat
+  statList(limit: Int!, offset: Int): PaginationListStat
   stat(id: Int!): Stat
 }
 

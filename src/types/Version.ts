@@ -9,7 +9,7 @@ export default gql`
   }
 
 type Query {
-  versionList(limit: Int!, offset: Int!): PaginationListVersion
+  versionList(limit: Int!, offset: Int): PaginationListVersion
   version(id: Int!): Version
 }
 

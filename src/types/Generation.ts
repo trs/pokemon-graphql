@@ -14,7 +14,7 @@ export default gql`
   }
 
   type Query {
-    generationList(limit: Int!, offset: Int!): PaginationListGeneration
+    generationList(limit: Int!, offset: Int): PaginationListGeneration
     generation(id: Int!): Generation
   }
 

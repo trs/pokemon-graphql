@@ -1,7 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
 import { getAPIResourceID } from './utils/getAPIResourcePath';
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { Move, ContestComboDetail, MoveFlavorText, MoveMetaData, MoveStatChange, PastMoveStatValues } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -79,8 +79,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    moveList: listFactory('moveList'),
-    move: singleFactory('move')
+    moveList: queryListFactory('moveList'),
+    move: queryFactory('move')
   }
 };
 

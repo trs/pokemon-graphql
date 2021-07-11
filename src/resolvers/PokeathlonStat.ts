@@ -1,6 +1,6 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { NaturePokeathlonStatAffect } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -13,8 +13,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    pokeathlonStatList: listFactory('pokeathlonStatList'),
-    pokeathlonStat : singleFactory('pokeathlonStat')
+    pokeathlonStatList: queryListFactory('pokeathlonStatList'),
+    pokeathlonStat : queryFactory('pokeathlonStat')
   }
 };
 

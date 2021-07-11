@@ -15,8 +15,16 @@ export type Context = {
   }
 }
 
+export type NamedResource = {
+  name: string
+}
+
 export type APIResource = {
   url: string;
 }
 
 export type PokemonDataMethods = keyof InstanceType<typeof PokemonAPI>;
+
+export type PokemonDataListMethods = Extract<PokemonDataMethods, `${string}List`>;
+
+export type PokemonDataSingletMethods = Exclude<PokemonDataMethods, `${string}List`>;

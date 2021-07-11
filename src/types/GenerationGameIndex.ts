@@ -7,7 +7,7 @@ export default gql`
   }
 
   type Query {
-    generationGameIndexList(limit: Int!, offset: Int!): PaginationListGenerationGameIndex
+    generationGameIndexList(limit: Int!, offset: Int): PaginationListGenerationGameIndex
     generationGameIndex(id: Int!): GenerationGameIndex
   }
 

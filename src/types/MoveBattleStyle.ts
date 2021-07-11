@@ -8,7 +8,7 @@ export default gql`
   }
 
 type Query {
-  moveBattleStyleList(limit: Int!, offset: Int!): PaginationListMoveBattleStyle
+  moveBattleStyleList(limit: Int!, offset: Int): PaginationListMoveBattleStyle
   moveBattleStyle(id: Int!): MoveBattleStyle
 }
 

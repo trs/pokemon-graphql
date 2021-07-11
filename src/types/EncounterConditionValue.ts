@@ -9,7 +9,7 @@ export default gql`
   }
 
   type Query {
-    encounterConditionValueList(limit: Int!, offset: Int!): PaginationListEncounterConditionValue
+    encounterConditionValueList(limit: Int!, offset: Int): PaginationListEncounterConditionValue
     encounterConditionValue(id: Int!): EncounterConditionValue
   }
 

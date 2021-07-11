@@ -11,7 +11,7 @@ export default gql`
   }
 
 type Query {
-  locationList(limit: Int!, offset: Int!): PaginationListLocation
+  locationList(limit: Int!, offset: Int): PaginationListLocation
   location(id: Int!): Location
 }
 

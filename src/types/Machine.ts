@@ -9,7 +9,7 @@ export default gql`
   }
 
 type Query {
-  machineList(limit: Int!, offset: Int!): PaginationListMachine
+  machineList(limit: Int!, offset: Int): PaginationListMachine
   machine(id: Int!): Machine
 }
 

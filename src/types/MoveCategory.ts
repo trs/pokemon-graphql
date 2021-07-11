@@ -9,7 +9,7 @@ export default gql`
   }
 
 type Query {
-  moveCategoryList(limit: Int!, offset: Int!): PaginationListMoveCategory
+  moveCategoryList(limit: Int!, offset: Int): PaginationListMoveCategory
   moveCategory(id: Int!): MoveCategory
 }
 

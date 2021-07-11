@@ -10,7 +10,7 @@ export default gql`
   }
 
   type Query {
-    itemCategoryList(limit: Int!, offset: Int!): PaginationListItemCategory
+    itemCategoryList(limit: Int!, offset: Int): PaginationListItemCategory
     itemCategory(id: Int!): ItemCategory
   }
 

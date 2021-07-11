@@ -1,6 +1,6 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { Type, TypePokemon, TypeRelations } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -58,8 +58,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    typeList: listFactory('typeList'),
-    type: singleFactory('type')
+    typeList: queryListFactory('typeList'),
+    type: queryFactory('type')
   }
 };
 

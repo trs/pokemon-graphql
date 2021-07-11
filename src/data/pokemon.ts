@@ -6,374 +6,374 @@ export default class PokemonAPI extends RESTDataSource {
     this.baseURL = 'https://pokeapi.co/api/v2/';
   }
 
-  async berry(id: number | string) {
+  berry(id: number | string) {
     return this.get(`/berry/${id}`);
   }
 
-  async berryList(limit: number, offset: number) {
+  berryList(limit: number, offset: number) {
     return this.get('/berry', {
       limit,
       offset
     });
   }
 
-  async berryFirmness(id: number | string) {
+  berryFirmness(id: number | string) {
     return this.get(`/berry-firmness/${id}`);
   }
 
-  async berryFirmnessList(limit: number, offset: number) {
+  berryFirmnessList(limit: number, offset: number) {
     return this.get('/berry-firmness', {
       limit,
       offset
     });
   }
 
-  async berryFlavor(id: number | string) {
+  berryFlavor(id: number | string) {
     return this.get(`/berry-flavor/${id}`);
   }
 
-  async berryFlavorList(limit: number, offset: number) {
+  berryFlavorList(limit: number, offset: number) {
     return this.get('/berry-flavor', {
       limit,
       offset
     });
   }
 
-  async contestType(id: number | string) {
+  contestType(id: number | string) {
     return this.get(`/contest-type/${id}`);
   }
 
-  async contestTypeList(limit: number, offset: number) {
+  contestTypeList(limit: number, offset: number) {
     return this.get('/contest-type', {
       limit,
       offset
     });
   }
 
-  async contestEffect(id: number | string) {
+  contestEffect(id: number | string) {
     return this.get(`/contest-effect/${id}`);
   }
 
-  async contestEffectList(limit: number, offset: number) {
+  contestEffectList(limit: number, offset: number) {
     return this.get('/contest-effect', {
       limit,
       offset
     });
   }
 
-  async superContestEffect(id: number | string) {
+  superContestEffect(id: number | string) {
     return this.get(`/super-contest-effect/${id}`);
   }
 
-  async superContestEffectList(limit: number, offset: number) {
+  superContestEffectList(limit: number, offset: number) {
     return this.get('/super-contest-effect', {
       limit,
       offset
     });
   }
 
-  async encounterMethod(id: number | string) {
+  encounterMethod(id: number | string) {
     return this.get(`/encounter-method/${id}`);
   }
 
-  async encounterMethodList(limit: number, offset: number) {
+  encounterMethodList(limit: number, offset: number) {
     return this.get('/encounter-method', {
       limit,
       offset
     });
   }
 
-  async encounterCondition(id: number | string) {
+  encounterCondition(id: number | string) {
     return this.get(`/encounter-condition/${id}`);
   }
 
-  async encounterConditionList(limit: number, offset: number) {
+  encounterConditionList(limit: number, offset: number) {
     return this.get('/encounter-condition', {
       limit,
       offset
     });
   }
 
-  async encounterConditionValue(id: number | string) {
+  encounterConditionValue(id: number | string) {
     return this.get(`/encounter-condition-value/${id}`);
   }
 
-  async encounterConditionValueList(limit: number, offset: number) {
+  encounterConditionValueList(limit: number, offset: number) {
     return this.get('/encounter-condition-value', {
       limit,
       offset
     });
   }
 
-  async evolutionChain(id: number | string) {
+  evolutionChain(id: number | string) {
     return this.get(`/evolution-chain/${id}`);
   }
 
-  async evolutionChainList(limit: number, offset: number) {
+  evolutionChainList(limit: number, offset: number) {
     return this.get('/evolution-chain', {
       limit,
       offset
     });
   }
 
-  async evolutionTrigger(id: number | string) {
+  evolutionTrigger(id: number | string) {
     return this.get(`/evolution-trigger/${id}`);
   }
 
-  async evolutionTriggerList(limit: number, offset: number) {
+  evolutionTriggerList(limit: number, offset: number) {
     return this.get('/evolution-trigger', {
       limit,
       offset
     });
   }
 
-  async generation(id: number | string) {
+  generation(id: number | string) {
     return this.get(`/generation/${id}`);
   }
 
-  async generationList(limit: number, offset: number) {
+  generationList(limit: number, offset: number) {
     return this.get('/generation', {
       limit,
       offset
     });
   }
 
-  async pokedex(id: number | string) {
+  pokedex(id: number | string) {
     return this.get(`/pokedex/${id}`);
   }
 
-  async pokedexList(limit: number, offset: number) {
+  pokedexList(limit: number, offset: number) {
     return this.get('/pokedex', {
       limit,
       offset
     });
   }
 
-  async version(id: number | string) {
+  version(id: number | string) {
     return this.get(`/version/${id}`);
   }
 
-  async versionList(limit: number, offset: number) {
+  versionList(limit: number, offset: number) {
     return this.get('/version', {
       limit,
       offset
     });
   }
 
-  async versionGroup(id: number | string) {
+  versionGroup(id: number | string) {
     return this.get(`/version-group/${id}`);
   }
 
-  async versionGroupList(limit: number, offset: number) {
+  versionGroupList(limit: number, offset: number) {
     return this.get('/version-group', {
       limit,
       offset
     });
   }
 
-  async item(id: number | string) {
+  item(id: number | string) {
     return this.get(`/item/${id}`);
   }
 
-  async itemList(limit: number, offset: number) {
+  itemList(limit: number, offset: number) {
     return this.get('/item', {
       limit,
       offset
     });
   }
 
-  async itemAttribute(id: number | string) {
+  itemAttribute(id: number | string) {
     return this.get(`/item-attribute/${id}`);
   }
 
-  async itemAttributeList(limit: number, offset: number) {
+  itemAttributeList(limit: number, offset: number) {
     return this.get('/item-attribute', {
       limit,
       offset
     });
   }
 
-  async itemCategory(id: number | string) {
+  itemCategory(id: number | string) {
     return this.get(`/item-category/${id}`);
   }
 
-  async itemCategoryList(limit: number, offset: number) {
+  itemCategoryList(limit: number, offset: number) {
     return this.get('/item-category', {
       limit,
       offset
     });
   }
 
-  async itemFlingEffect(id: number | string) {
+  itemFlingEffect(id: number | string) {
     return this.get(`/item-fling-effect/${id}`);
   }
 
-  async itemFlingEffectList(limit: number, offset: number) {
+  itemFlingEffectList(limit: number, offset: number) {
     return this.get('/item-fling-effect', {
       limit,
       offset
     });
   }
 
-  async itemPocket(id: number | string) {
+  itemPocket(id: number | string) {
     return this.get(`/item-pocket/${id}`);
   }
 
-  async itemPocketList(limit: number, offset: number) {
+  itemPocketList(limit: number, offset: number) {
     return this.get('/item-pocket', {
       limit,
       offset
     });
   }
 
-  async location(id: number | string) {
+  location(id: number | string) {
     return this.get(`/location/${id}`);
   }
 
-  async locationList(limit: number, offset: number) {
+  locationList(limit: number, offset: number) {
     return this.get('/location', {
       limit,
       offset
     });
   }
 
-  async locationArea(id: number | string) {
+  locationArea(id: number | string) {
     return this.get(`/location-area/${id}`);
   }
 
-  async locationAreaList(limit: number, offset: number) {
+  locationAreaList(limit: number, offset: number) {
     return this.get('/location-area', {
       limit,
       offset
     });
   }
 
-  async palParkArea(id: number | string) {
+  palParkArea(id: number | string) {
     return this.get(`/pal-park-area/${id}`);
   }
 
-  async palParkAreaList(limit: number, offset: number) {
+  palParkAreaList(limit: number, offset: number) {
     return this.get('/pal-park-area', {
       limit,
       offset
     });
   }
 
-  async region(id: number | string) {
+  region(id: number | string) {
     return this.get(`/region/${id}`);
   }
 
-  async regionList(limit: number, offset: number) {
+  regionList(limit: number, offset: number) {
     return this.get('/region', {
       limit,
       offset
     });
   }
 
-  async machine(id: number | string) {
+  machine(id: number | string) {
     return this.get(`/machine/${id}`);
   }
 
-  async machineList(limit: number, offset: number) {
+  machineList(limit: number, offset: number) {
     return this.get('/machine', {
       limit,
       offset
     });
   }
 
-  async move(id: number | string) {
+  move(id: number | string) {
     return this.get(`/move/${id}`);
   }
 
-  async moveList(limit: number, offset: number) {
+  moveList(limit: number, offset: number) {
     return this.get('/move', {
       limit,
       offset
     });
   }
 
-  async moveAilment(id: number | string) {
+  moveAilment(id: number | string) {
     return this.get(`/move-ailment/${id}`);
   }
 
-  async moveAilmentList(limit: number, offset: number) {
+  moveAilmentList(limit: number, offset: number) {
     return this.get('/move-ailment', {
       limit,
       offset
     });
   }
 
-  async moveBattleStyle(id: number | string) {
+  moveBattleStyle(id: number | string) {
     return this.get(`/move-battle-style/${id}`);
   }
 
-  async moveBattleStyleList(limit: number, offset: number) {
+  moveBattleStyleList(limit: number, offset: number) {
     return this.get('/move-battle-style', {
       limit,
       offset
     });
   }
 
-  async moveCategory(id: number | string) {
+  moveCategory(id: number | string) {
     return this.get(`/move-category/${id}`);
   }
 
-  async moveCategoryList(limit: number, offset: number) {
+  moveCategoryList(limit: number, offset: number) {
     return this.get('/move-category', {
       limit,
       offset
     });
   }
 
-  async moveDamageClass(id: number | string) {
+  moveDamageClass(id: number | string) {
     return this.get(`/move-damage-class/${id}`);
   }
 
-  async moveDamageClassList(limit: number, offset: number) {
+  moveDamageClassList(limit: number, offset: number) {
     return this.get('/move-damage-class', {
       limit,
       offset
     });
   }
 
-  async moveLearnMethod(id: number | string) {
+  moveLearnMethod(id: number | string) {
     return this.get(`/move-learn-method/${id}`);
   }
 
-  async moveLearnMethodList(limit: number, offset: number) {
+  moveLearnMethodList(limit: number, offset: number) {
     return this.get('/move-learn-method', {
       limit,
       offset
     });
   }
 
-  async moveTarget(id: number | string) {
+  moveTarget(id: number | string) {
     return this.get(`/move-target/${id}`);
   }
 
-  async moveTargetList(limit: number, offset: number) {
+  moveTargetList(limit: number, offset: number) {
     return this.get('/move-target', {
       limit,
       offset
     });
   }
 
-  async ability(id: number | string) {
+  ability(id: number | string) {
     return this.get(`/ability/${id}`);
   }
 
-  async abilityList(limit: number, offset: number) {
+  abilityList(limit: number, offset: number) {
     return this.get('/ability', {
       limit,
       offset
     });
   }
 
-  async characteristic(id: number | string) {
+  characteristic(id: number | string) {
     return this.get(`/characteristic/${id}`);
   }
 
-  async characteristicList(limit: number, offset: number) {
+  characteristicList(limit: number, offset: number) {
     return this.get('/characteristic', {
       limit,
       offset
@@ -381,157 +381,159 @@ export default class PokemonAPI extends RESTDataSource {
   }
 
   async eggGroup(id: number | string) {
-    return this.get(`/egg-group/${id}`);
+    const x = await this.get(`/egg-group/${id}`);
+    console.log(JSON.stringify(x, null, 2), id)
+    return x;
   }
 
-  async eggGroupList(limit: number, offset: number) {
+  eggGroupList(limit: number, offset: number) {
     return this.get('/egg-group', {
       limit,
       offset
     });
   }
 
-  async gender(id: number | string) {
+  gender(id: number | string) {
     return this.get(`/gender/${id}`);
   }
 
-  async genderList(limit: number, offset: number) {
+  genderList(limit: number, offset: number) {
     return this.get('/gender', {
       limit,
       offset
     });
   }
 
-  async growthRate(id: number | string) {
+  growthRate(id: number | string) {
     return this.get(`/growth-rate/${id}`);
   }
 
-  async growthRateList(limit: number, offset: number) {
+  growthRateList(limit: number, offset: number) {
     return this.get('/growth-rate', {
       limit,
       offset
     });
   }
 
-  async nature(id: number | string) {
+  nature(id: number | string) {
     return this.get(`/nature/${id}`);
   }
 
-  async natureList(limit: number, offset: number) {
+  natureList(limit: number, offset: number) {
     return this.get('/nature', {
       limit,
       offset
     });
   }
 
-  async pokeathlonStat(id: number | string) {
+  pokeathlonStat(id: number | string) {
     return this.get(`/pokeathlon-stat/${id}`);
   }
 
-  async pokeathlonStatList(limit: number, offset: number) {
+  pokeathlonStatList(limit: number, offset: number) {
     return this.get('/pokeathlon-stat', {
       limit,
       offset
     });
   }
 
-  async pokemon(id: number | string) {
+  pokemon(id: number | string) {
     return this.get(`/pokemon/${id}`);
   }
 
-  async pokemonList(limit: number, offset: number) {
-    return await this.get('/pokemon', {
+  pokemonList(limit: number, offset: number) {
+    return this.get('/pokemon', {
       limit,
       offset
     });
   }
 
-  async pokemonEncounterList(id: number | string) {
+  pokemonEncounterList(id: number | string) {
     return this.get(`/pokemon/${id}/encounters`);
   }
 
-  async pokemonColor(id: number | string) {
+  pokemonColor(id: number | string) {
     return this.get(`/pokemon-color/${id}`);
   }
 
-  async pokemonColorList(limit: number, offset: number) {
-    return await this.get('/pokemon-color', {
+  pokemonColorList(limit: number, offset: number) {
+    return this.get('/pokemon-color', {
       limit,
       offset
     });
   }
 
-  async pokemonForm(id: number | string) {
+  pokemonForm(id: number | string) {
     return this.get(`/pokemon-form/${id}`);
   }
 
-  async pokemonFormList(limit: number, offset: number) {
-    return await this.get('/pokemon-form', {
+  pokemonFormList(limit: number, offset: number) {
+    return this.get('/pokemon-form', {
       limit,
       offset
     });
   }
 
-  async pokemonHabitat(id: number | string) {
+  pokemonHabitat(id: number | string) {
     return this.get(`/pokemon-habitat/${id}`);
   }
 
-  async pokemonHabitatList(limit: number, offset: number) {
-    return await this.get('/pokemon-habitat', {
+  pokemonHabitatList(limit: number, offset: number) {
+    return this.get('/pokemon-habitat', {
       limit,
       offset
     });
   }
 
-  async pokemonShape(id: number | string) {
+  pokemonShape(id: number | string) {
     return this.get(`/pokemon-shape/${id}`);
   }
 
-  async pokemonShapeList(limit: number, offset: number) {
-    return await this.get('/pokemon-shape', {
+  pokemonShapeList(limit: number, offset: number) {
+    return this.get('/pokemon-shape', {
       limit,
       offset
     });
   }
 
-  async pokemonSpecies(id: number | string) {
+  pokemonSpecies(id: number | string) {
     return this.get(`/pokemon-species/${id}`);
   }
 
-  async pokemonSpeciesList(limit: number, offset: number) {
-    return await this.get('/pokemon-species', {
+  pokemonSpeciesList(limit: number, offset: number) {
+    return this.get('/pokemon-species', {
       limit,
       offset
     });
   }
 
-  async stat(id: number | string) {
+  stat(id: number | string) {
     return this.get(`/stat/${id}`);
   }
 
-  async statList(limit: number, offset: number) {
-    return await this.get('/stat', {
+  statList(limit: number, offset: number) {
+    return this.get('/stat', {
       limit,
       offset
     });
   }
 
-  async type(id: number | string) {
+  type(id: number | string) {
     return this.get(`/type/${id}`);
   }
 
-  async typeList(limit: number, offset: number) {
+  typeList(limit: number, offset: number) {
     return this.get('/type', {
       limit,
       offset
     });
   }
 
-  async language(id: number | string) {
+  language(id: number | string) {
     return this.get(`/language/${id}`);
   }
 
-  async languageList(limit: number, offset: number) {
+  languageList(limit: number, offset: number) {
     return this.get('/language', {
       limit,
       offset

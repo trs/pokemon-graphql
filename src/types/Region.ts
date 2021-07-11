@@ -12,7 +12,7 @@ export default gql`
   }
 
 type Query {
-  regionList(limit: Int!, offset: Int!): PaginationListRegion
+  regionList(limit: Int!, offset: Int): PaginationListRegion
   region(id: Int!): Region
 }
 

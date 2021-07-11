@@ -1,15 +1,17 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory, singleFactory } from './utils/queryFactory';
+import { queryListFactory, queryFactory } from './utils/queryFactory';
 
 import type { BerryFlavor, FlavorBerryMap } from '../generated/graphql';
 import type { Context } from './utils/types';
+import { resolveResourceListFactory } from './utils/resolverFactory';
 
 const resolver: IResolvers = {
   BerryFlavor: {
     contest_type: async (parent: BerryFlavor, _args, {dataSources}: Context) => {
       return dataSources.pokemonAPI.contestType(parent.contest_type.name);
-    }
+    },
+    berries: resolveResourceListFactory<BerryFlavor>((parent) => parent.berries)
   },
   FlavorBerryMap: {
     berry: async (parent: FlavorBerryMap, _args, {dataSources}: Context) => {
@@ -18,8 +20,8 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    berryFlavorList: listFactory('berryFlavorList'),
-    berryFlavor: singleFactory('berryFlavor')
+    berryFlavorList: queryListFactory('berryFlavorList'),
+    berryFlavor: queryFactory('berryFlavor')
   }
 };
 

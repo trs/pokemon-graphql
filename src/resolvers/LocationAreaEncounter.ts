@@ -1,6 +1,6 @@
 import type { IResolvers } from 'apollo-server';
 
-import { listFactory } from './utils/queryFactory';
+import { queryListFactory } from './utils/queryFactory';
 
 import type { LocationAreaEncounter } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -13,7 +13,7 @@ const resolver: IResolvers = {
   },
 
   Query: {
-    locationAreaEncounterList: listFactory('pokemonEncounterList')
+    locationAreaEncounterList: queryListFactory('pokemonEncounterList')
   }
 };
 

@@ -15,7 +15,7 @@ export default gql`
   }
 
   type Query {
-    contestTypeList(limit: Int!, offset: Int!): PaginationListContestType
+    contestTypeList(limit: Int!, offset: Int): PaginationListContestType
     contestType(id: Int!): ContestType
   }
 

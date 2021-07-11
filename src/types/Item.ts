@@ -34,7 +34,7 @@ export default gql`
   }
 
   type Query {
-    itemList(limit: Int!, offset: Int!): PaginationListItem
+    itemList(limit: Int!, offset: Int): PaginationListItem
     item(id: Int!): Item
   }
 

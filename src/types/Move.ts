@@ -74,7 +74,7 @@ export default gql`
   }
 
   type Query {
-    moveList(limit: Int!, offset: Int!): PaginationListMove
+    moveList(limit: Int!, offset: Int): PaginationListMove
     move(id: Int!): Move
   }
 

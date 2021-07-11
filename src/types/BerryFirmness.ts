@@ -4,12 +4,12 @@ export default gql`
   type BerryFirmness {
     id: Int!
     name: String!
-    berries: [Berry!]!
+    berries(limit: Int!, offset: Int): PaginationListBerry!
     names: [Name!]!
   }
 
   type Query {
-    berryFirmnessList(limit: Int!, offset: Int!): PaginationListBerryFirmness
+    berryFirmnessList(limit: Int!, offset: Int): PaginationListBerryFirmness
     berryFirmness(id: Int!): BerryFirmness
   }
 

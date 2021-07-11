@@ -10,7 +10,7 @@ export default gql`
   }
 
   type Query {
-    characteristicList(limit: Int!, offset: Int!): PaginationListCharacteristic
+    characteristicList(limit: Int!, offset: Int): PaginationListCharacteristic
     characteristic(id: Int!): Characteristic
   }
 
