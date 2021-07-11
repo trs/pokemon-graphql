@@ -23,4 +23,16 @@ export default gql`
     high_hp_preference: Int!
     move_battle_style: MoveBattleStyle!
   }
+
+type Query {
+  natureList(limit: Int!, offset: Int!): PaginationListNature
+  nature(id: Int!): Nature
+}
+
+type PaginationListNature{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [Nature!]!
+}
 `;

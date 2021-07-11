@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { BerryFirmness } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -11,6 +13,11 @@ const resolver: IResolvers = {
       })
     }
   },
+
+  Query: {
+    berryFirmnessList: listFactory('berryFirmnessList'),
+    berryFirmness: singleFactory('berryFirmness')
+  }
 };
 
 export default resolver;

@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { PokemonForm } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -11,6 +13,11 @@ const resolver: IResolvers = {
     version_group: async (parent: PokemonForm , _args, {dataSources}: Context) => {
       return dataSources.pokemonAPI.versionGroup(parent.version_group.name);
     },
+  },
+
+  Query: {
+    pokemonFormList: listFactory('pokemonFormList'),
+    pokemonForm: singleFactory('pokemonForm')
   }
 };
 

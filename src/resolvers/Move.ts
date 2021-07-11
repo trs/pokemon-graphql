@@ -1,6 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
 import { getAPIResourceID } from './utils/getAPIResourcePath';
+import { listFactory, singleFactory } from './utils/queryFactory';
 
 import type { Move, ContestComboDetail, MoveFlavorText, MoveMetaData, MoveStatChange, PastMoveStatValues } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -75,6 +76,11 @@ const resolver: IResolvers = {
     version_group: async (parent: PastMoveStatValues , _args, {dataSources}: Context) => {
       return dataSources.pokemonAPI.versionGroup(parent.version_group.name);
     },
+  },
+
+  Query: {
+    moveList: listFactory('moveList'),
+    move: singleFactory('move')
   }
 };
 

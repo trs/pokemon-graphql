@@ -7,4 +7,16 @@ export default gql`
     names: [Name!]!
     pokemon_species: [PokemonSpecies!]!
   }
+
+type Query {
+  pokemonHabitatList(limit: Int!, offset: Int!): PaginationListPokemonHabitat
+  pokemonHabitat(id: Int!): PokemonHabitat
+}
+
+type PaginationListPokemonHabitat{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [PokemonHabitat!]!
+}
 `;

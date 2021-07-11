@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { EvolutionChain, ChainLink, EvolutionDetail } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -62,6 +64,11 @@ const resolver: IResolvers = {
 
       return dataSources.pokemonAPI.pokemonSpecies(parent.trade_species.name);
     },
+  },
+
+  Query: {
+    evolutionChainList: listFactory('evolutionChainList'),
+    evolutionChain: singleFactory('evolutionChain')
   }
 };
 

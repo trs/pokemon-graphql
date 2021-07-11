@@ -18,3 +18,5 @@ export type Context = {
 export type APIResource = {
   url: string;
 }
+
+export type PokemonDataMethods = keyof InstanceType<typeof PokemonAPI>;

@@ -1,6 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
 import { getAPIResourceID } from './utils/getAPIResourcePath';
+import { listFactory, singleFactory } from './utils/queryFactory';
 
 import type { PokemonSpecies, Genus, PokemonSpeciesDexEntry, PalParkEncounterArea, PokemonSpeciesVariety } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -56,6 +57,11 @@ const resolver: IResolvers = {
     pokemon: async (parent: PokemonSpeciesVariety , _args, {dataSources}: Context) => {
       return dataSources.pokemonAPI.pokemon(parent.pokemon.name);
     },
+  },
+
+  Query: {
+    pokemonSpeciesList: listFactory('pokemonSpeciesList'),
+    pokemonSpecies: singleFactory('pokemonSpecies')
   }
 };
 

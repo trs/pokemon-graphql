@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { ItemFlingEffect } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -10,6 +12,11 @@ const resolver: IResolvers = {
         return dataSources.pokemonAPI.item(item.name);
       });
     }
+  },
+
+  Query: {
+    itemFlingEffectList: listFactory('itemFlingEffectList'),
+    itemFlingEffect: singleFactory('itemFlingEffect')
   }
 };
 

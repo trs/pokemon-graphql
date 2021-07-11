@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { Berry, BerryFlavorMap } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -25,6 +27,11 @@ const resolver: IResolvers = {
     flavor: async (parent: BerryFlavorMap, _args, {dataSources}: Context) => {
       return dataSources.pokemonAPI.berryFlavor(parent.flavor.name);
     }
+  },
+
+  Query: {
+    berryList: listFactory('berryList'),
+    berry: singleFactory('berry')
   }
 };
 

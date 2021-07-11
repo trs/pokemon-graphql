@@ -26,4 +26,16 @@ export default gql`
     half_damage_from: [Type!]!
     double_damage_from: [Type!]!
   }
+
+type Query {
+  typeList(limit: Int!, offset: Int!): PaginationListType
+  type(id: Int!): Type
+}
+
+type PaginationListType{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [Type!]!
+}
 `;

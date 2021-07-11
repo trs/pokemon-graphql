@@ -7,4 +7,16 @@ export default gql`
     values: [EncounterConditionValue!]!
     names: [Name!]!
   }
+
+type Query {
+  encounterConditionList(limit: Int!, offset: Int!): PaginationListEncounterCondition
+  encounterCondition(id: Int!): EncounterCondition
+}
+
+type PaginationListEncounterCondition{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [EncounterCondition!]!
+}
 `

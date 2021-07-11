@@ -17,4 +17,16 @@ export default gql`
     max_change: Int!
     nature: Nature!
   }
+
+type Query {
+  pokeathlonStatList(limit: Int!, offset: Int!): PaginationListPokeathlonStat
+  pokeathlonStat(id: Int!): PokeathlonStat
+}
+
+type PaginationListPokeathlonStat{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [PokeathlonStat!]!
+}
 `;

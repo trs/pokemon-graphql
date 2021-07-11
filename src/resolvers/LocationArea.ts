@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { LocationArea, EncounterMethodRate, EncounterVersionDetails, PokemonEncounter } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -23,6 +25,11 @@ const resolver: IResolvers = {
     pokemon: async (parent: PokemonEncounter , _args, {dataSources}: Context) => {
       return dataSources.pokemonAPI.pokemon(parent.pokemon.name);
     }
+  },
+
+  Query: {
+    locationAreaList: listFactory('locationAreaList'),
+    locationArea: singleFactory('locationArea')
   }
 };
 

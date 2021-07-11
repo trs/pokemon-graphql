@@ -13,4 +13,16 @@ export default gql`
     potency: Int!
     berry: Berry!
   }
+
+  type Query {
+    berryFlavorList(limit: Int!, offset: Int!): PaginationListBerryFlavor
+    berryFlavor(id: Int!): BerryFlavor
+  }
+
+  type PaginationListBerryFlavor{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [BerryFlavor!]!
+  }
 `

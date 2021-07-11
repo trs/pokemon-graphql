@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { Location } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -13,6 +15,11 @@ const resolver: IResolvers = {
         return dataSources.pokemonAPI.locationArea(area.name);
       });
     }
+  },
+
+  Query: {
+    locationList: listFactory('locationList'),
+    location: singleFactory('location')
   }
 };
 

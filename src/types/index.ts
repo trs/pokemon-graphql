@@ -1,3 +1,5 @@
+import { mergeTypeDefs } from '@graphql-tools/merge';
+
 import Ability from "./Ability"
 import Berry from "./Berry"
 import BerryFirmness from "./BerryFirmness"
@@ -48,7 +50,6 @@ import PokemonForm from "./PokemonForm"
 import PokemonHabitat from "./PokemonHabitat"
 import PokemonShape from "./PokemonShape"
 import PokemonSpecies from "./PokemonSpecies"
-import Query from "./Query"
 import Region from "./Region"
 import Stat from "./Stat"
 import SuperContestEffect from "./SuperContestEffect"
@@ -60,7 +61,7 @@ import VersionGameIndex from "./VersionGameIndex"
 import VersionGroup from "./VersionGroup"
 import VersionGroupFlavorText from "./VersionGroupFlavorText"
 
-export default [
+export default mergeTypeDefs([
   Ability,
   Berry,
   BerryFirmness,
@@ -111,7 +112,6 @@ export default [
   PokemonHabitat,
   PokemonShape,
   PokemonSpecies,
-  Query,
   Region,
   Stat,
   SuperContestEffect,
@@ -122,4 +122,4 @@ export default [
   VersionGameIndex,
   VersionGroup,
   VersionGroupFlavorText
-];
+]);

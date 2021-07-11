@@ -10,4 +10,16 @@ export default gql`
     pokedexes: [Pokedex!]!
     version_groups: [VersionGroup!]!
   }
+
+type Query {
+  regionList(limit: Int!, offset: Int!): PaginationListRegion
+  region(id: Int!): Region
+}
+
+type PaginationListRegion{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [Region!]!
+}
 `;

@@ -35,4 +35,16 @@ export default gql`
     trade_species: PokemonSpecies
     turn_upside_down: Boolean
   }
+
+  type Query {
+    evolutionChainList(limit: Int!, offset: Int!): PaginationListEvolutionChain
+    evolutionChain(id: Int!): EvolutionChain
+  }
+
+  type PaginationListEvolutionChain{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [EvolutionChain!]!
+  }
 `

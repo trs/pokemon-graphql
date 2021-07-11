@@ -7,4 +7,16 @@ export default gql`
     moves: [Move!]!
     names: [Name!]!
   }
+
+type Query {
+  moveAilmentList(limit: Int!, offset: Int!): PaginationListMoveAilment
+  moveAilment(id: Int!): MoveAilment
+}
+
+type PaginationListMoveAilment{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [MoveAilment!]!
+}
 `;

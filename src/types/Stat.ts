@@ -27,4 +27,16 @@ export default gql`
     increase: [Nature!]!
     decrease: [Nature!]!
   }
+
+type Query {
+  statList(limit: Int!, offset: Int!): PaginationListStat
+  stat(id: Int!): Stat
+}
+
+type PaginationListStat{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [Stat!]!
+}
 `;

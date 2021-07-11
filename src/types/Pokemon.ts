@@ -69,4 +69,16 @@ export default gql`
     back_female: String!
     back_shiny_female: String!
   }
+
+type Query {
+  pokemonList(limit: Int!, offset: Int!): PaginationListPokemon
+  pokemon(id: Int!): Pokemon
+}
+
+type PaginationListPokemon{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [Pokemon!]!
+}
 `

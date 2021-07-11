@@ -13,4 +13,16 @@ export default gql`
     rate: Int!
     pokemon_species: PokemonSpecies!
   }
+
+type Query {
+  palParkAreaList(limit: Int!, offset: Int!): PaginationListPalParkArea
+  palParkArea(id: Int!): PalParkArea
+}
+
+type PaginationListPalParkArea{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [PalParkArea!]!
+}
 `;

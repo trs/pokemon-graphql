@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { Pokemon, PokemonAbility, PokemonType, PokemonHeldItem, PokemonHeldItemVersion, PokemonMove, PokemonMoveVersion, PokemonStat } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -77,6 +79,11 @@ const resolver: IResolvers = {
     stat: async (parent: PokemonStat, _args, {dataSources}: Context) => {
       return dataSources.pokemonAPI.stat(parent.stat.name);
     },
+  },
+
+  Query: {
+    pokemonList: listFactory('pokemonList'),
+    pokemon : singleFactory('pokemon')
   }
 };
 

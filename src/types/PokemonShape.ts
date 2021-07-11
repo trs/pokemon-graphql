@@ -13,4 +13,16 @@ export default gql`
     awesome_name: String!
     language: Language!
   }
+
+type Query {
+  pokemonShapeList(limit: Int!, offset: Int!): PaginationListPokemonShape
+  pokemonShape(id: Int!): PokemonShape
+}
+
+type PaginationListPokemonShape{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [PokemonShape!]!
+}
 `;

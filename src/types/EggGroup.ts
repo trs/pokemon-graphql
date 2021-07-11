@@ -7,4 +7,16 @@ export default gql`
     names: [Name!]!
     pokemon_species: [PokemonSpecies!]!
   }
+
+type Query {
+  eggGroupList(limit: Int!, offset: Int!): PaginationListEggGroup
+  eggGroup(id: Int!): EggGroup
+}
+
+type PaginationListEggGroup{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [EggGroup!]!
+}
 `

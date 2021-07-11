@@ -9,4 +9,16 @@ export default gql`
     iso3166: String!
     names: [Name!]!
   }
+
+type Query {
+  languageList(limit: Int!, offset: Int!): PaginationListLanguage
+  language(id: Int!): Language
+}
+
+type PaginationListLanguage{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [Language!]!
+}
 `

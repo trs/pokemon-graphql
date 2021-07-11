@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { VersionGroup } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -28,6 +30,11 @@ const resolver: IResolvers = {
         return dataSources.pokemonAPI.version(version.name);
       })
     },
+  },
+
+  Query: {
+    versionGroupList: listFactory('versionGroupList'),
+    versionGroup: singleFactory('versionGroup')
   }
 };
 

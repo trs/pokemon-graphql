@@ -25,4 +25,16 @@ export default gql`
     pokemon: Pokemon!
     version_details: [VersionEncounterDetail]
   }
+
+type Query {
+  locationAreaList(limit: Int!, offset: Int!): PaginationListLocationArea
+  locationArea(id: Int!): LocationArea
+}
+
+type PaginationListLocationArea{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [LocationArea!]!
+}
 `;

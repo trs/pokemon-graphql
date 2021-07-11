@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { Type, TypePokemon, TypeRelations } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -53,6 +55,11 @@ const resolver: IResolvers = {
         return dataSources.pokemonAPI.type(type.name);
       })
     },
+  },
+
+  Query: {
+    typeList: listFactory('typeList'),
+    type: singleFactory('type')
   }
 };
 

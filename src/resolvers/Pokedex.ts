@@ -1,5 +1,8 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
+
 import type { Pokedex, PokemonEntry } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -18,6 +21,11 @@ const resolver: IResolvers = {
     pokemon_species: async (parent: PokemonEntry, _args, {dataSources}: Context) => {
       return dataSources.pokemonAPI.pokemonSpecies(parent.pokemon_species.name);
     },
+  },
+
+  Query: {
+    pokedexList: listFactory('pokedexList'),
+    pokedex: singleFactory('pokedex')
   }
 };
 

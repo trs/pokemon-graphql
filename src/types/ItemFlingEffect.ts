@@ -7,4 +7,16 @@ export default gql`
     effect_entries: [Effect!]!
     items: [Item!]!
   }
+
+  type Query {
+    itemFlingEffectList(limit: Int!, offset: Int!): PaginationListItemFlingEffect
+    itemFlingEffect(id: Int!): ItemFlingEffect
+  }
+
+  type PaginationListItemFlingEffect{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [ItemFlingEffect!]!
+  }
 `;

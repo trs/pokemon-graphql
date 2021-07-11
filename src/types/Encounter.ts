@@ -8,4 +8,16 @@ export default gql`
     change: Int!
     method: EncounterMethod!
   }
+
+  type Query {
+    encounterList(limit: Int!, offset: Int!): PaginationListEncounter
+    encounter(id: Int!): Encounter
+  }
+
+  type PaginationListEncounter{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [Encounter!]!
+  }
 `;

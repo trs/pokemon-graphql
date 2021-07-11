@@ -2,6 +2,8 @@ import Ability from "./Ability"
 import Berry from "./Berry"
 import BerryFirmness from "./BerryFirmness"
 import BerryFlavor from "./BerryFlavor"
+import Characteristic from "./Characteristic"
+import ContestEffect from "./ContestEffect"
 import ContestType from "./ContestType"
 import Description from "./Description"
 import Effect from "./Effect"
@@ -9,6 +11,7 @@ import EggGroup from "./EggGroup"
 import Encounter from "./Encounter"
 import EncounterCondition from "./EncounterCondition"
 import EncounterConditionValue from "./EncounterConditionValue"
+import EncounterMethod from "./EncounterMethod"
 import EvolutionChain from "./EvolutionChain"
 import EvolutionTrigger from "./EvolutionTrigger"
 import FlavorText from "./FlavorText"
@@ -28,6 +31,7 @@ import Machine from "./Machine"
 import MachineVersionDetail from "./MachineVersionDetail"
 import Move from "./Move"
 import MoveAilment from "./MoveAilment"
+import MoveBattleStyle from "./MoveBattleStyle"
 import MoveCategory from "./MoveCategory"
 import MoveDamageClass from "./MoveDamageClass"
 import MoveLearnMethod from "./MoveLearnMethod"
@@ -43,7 +47,6 @@ import PokemonForm from "./PokemonForm"
 import PokemonHabitat from "./PokemonHabitat"
 import PokemonShape from "./PokemonShape"
 import PokemonSpecies from "./PokemonSpecies"
-import Query from "./Query"
 import Region from "./Region"
 import Stat from "./Stat"
 import SuperContestEffect from "./SuperContestEffect"
@@ -60,6 +63,8 @@ export default [
   Berry,
   BerryFirmness,
   BerryFlavor,
+  Characteristic,
+  ContestEffect,
   ContestType,
   Description,
   Effect,
@@ -67,6 +72,7 @@ export default [
   Encounter,
   EncounterCondition,
   EncounterConditionValue,
+  EncounterMethod,
   EvolutionChain,
   EvolutionTrigger,
   FlavorText,
@@ -86,6 +92,7 @@ export default [
   MachineVersionDetail,
   Move,
   MoveAilment,
+  MoveBattleStyle,
   MoveCategory,
   MoveDamageClass,
   MoveLearnMethod,
@@ -101,7 +108,6 @@ export default [
   PokemonHabitat,
   PokemonShape,
   PokemonSpecies,
-  Query,
   Region,
   Stat,
   SuperContestEffect,

@@ -1,6 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
 import { getAPIResourceID } from './utils/getAPIResourcePath';
+import { listFactory, singleFactory } from './utils/queryFactory';
 
 import type { Stat, MoveStatAffect, NatureStatAffectSets } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -35,6 +36,11 @@ const resolver: IResolvers = {
         return dataSources.pokemonAPI.nature(nature.name);
       })
     }
+  },
+
+  Query: {
+    statList: listFactory('statList'),
+    stat: singleFactory('stat')
   }
 };
 

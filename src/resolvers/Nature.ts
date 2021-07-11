@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { Nature, NatureStatChange, MoveBattleStylePreference } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -27,6 +29,11 @@ const resolver: IResolvers = {
     move_battle_style: async (parent: MoveBattleStylePreference, _args, {dataSources}: Context) => {
       return dataSources.pokemonAPI.moveBattleStyle(parent.move_battle_style.name);
     }
+  },
+
+  Query: {
+    natureList: listFactory('natureList'),
+    nature: singleFactory('nature')
   }
 };
 

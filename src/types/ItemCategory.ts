@@ -8,4 +8,16 @@ export default gql`
     names: [Name!]!
     pocket: ItemPocket!
   }
+
+  type Query {
+    itemCategoryList(limit: Int!, offset: Int!): PaginationListItemCategory
+    itemCategory(id: Int!): ItemCategory
+  }
+
+  type PaginationListItemCategory{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [ItemCategory!]!
+  }
 `;

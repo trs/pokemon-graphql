@@ -14,4 +14,16 @@ export default gql`
     level: Int!
     experience: Int!
   }
+
+  type Query {
+    growthRateList(limit: Int!, offset: Int!): PaginationListGrowthRate
+    growthRate(id: Int!): GrowthRate
+  }
+
+  type PaginationListGrowthRate{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [GrowthRate!]!
+  }
 `

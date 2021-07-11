@@ -446,7 +446,7 @@ export default class PokemonAPI extends RESTDataSource {
     });
   }
 
-  async pokemonEncounters(id: number | string) {
+  async pokemonEncounterList(id: number | string) {
     return this.get(`/pokemon/${id}/encounters`);
   }
 

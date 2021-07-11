@@ -11,4 +11,16 @@ export default gql`
     regions: [Region!]!
     versions: [Version!]!
   }
+
+type Query {
+  versionGroupList(limit: Int!, offset: Int!): PaginationListVersionGroup
+  versionGroup(id: Int!): VersionGroup
+}
+
+type PaginationListVersionGroup{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [VersionGroup!]!
+}
 `;

@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { ContestType, ContestName } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -13,6 +15,11 @@ const resolver: IResolvers = {
     language: async (parent: ContestName, _args, {dataSources}: Context) => {
       return dataSources.pokemonAPI.language(parent.language.name);
     }
+  },
+
+  Query: {
+    contestTypeList: listFactory('contestTypeList'),
+    contestType: singleFactory('contestType')
   }
 };
 

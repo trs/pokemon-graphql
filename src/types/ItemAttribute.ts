@@ -8,4 +8,16 @@ export default gql`
     names: [Name!]!
     descriptions: [Description!]!
   }
+
+  type Query {
+    itemAttributeList(limit: Int!, offset: Int!): PaginationListItemAttribute
+    itemAttribute(id: Int!): ItemAttribute
+  }
+
+  type PaginationListItemAttribute{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [ItemAttribute!]!
+  }
 `;

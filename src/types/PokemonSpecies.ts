@@ -51,4 +51,16 @@ export default gql`
     is_default: Boolean!
     pokemon: Pokemon!
   }
+
+type Query {
+  pokemonSpeciesList(limit: Int!, offset: Int!): PaginationListPokemonSpecies
+  pokemonSpecies(id: Int!): PokemonSpecies
+}
+
+type PaginationListPokemonSpecies{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [PokemonSpecies!]!
+}
 `;

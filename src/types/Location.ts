@@ -9,4 +9,16 @@ export default gql`
     game_indices: [GenerationGameIndex!]!
     areas: [LocationArea!]!
   }
+
+type Query {
+  locationList(limit: Int!, offset: Int!): PaginationListLocation
+  location(id: Int!): Location
+}
+
+type PaginationListLocation{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [Location!]!
+}
 `;

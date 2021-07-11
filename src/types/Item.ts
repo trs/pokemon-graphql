@@ -32,4 +32,16 @@ export default gql`
     rarity: Int!
     version: Version!
   }
+
+  type Query {
+    itemList(limit: Int!, offset: Int!): PaginationListItem
+    item(id: Int!): Item
+  }
+
+  type PaginationListItem{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [Item!]!
+  }
 `;

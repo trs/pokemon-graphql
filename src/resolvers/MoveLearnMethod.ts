@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { MoveLearnMethod } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -10,6 +12,11 @@ const resolver: IResolvers = {
         return dataSources.pokemonAPI.versionGroup(version.name);
       })
     },
+  },
+
+  Query: {
+    moveLearnMethodList: listFactory('moveLearnMethodList'),
+    moveLearnMethod: singleFactory('moveLearnMethod')
   }
 };
 

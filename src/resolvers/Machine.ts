@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { Machine } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -14,6 +16,11 @@ const resolver: IResolvers = {
     version_group: async (parent: Machine , _args, {dataSources}: Context) => {
       return dataSources.pokemonAPI.versionGroup(parent.version_group.name);
     },
+  },
+
+  Query: {
+    machineList: listFactory('machineList'),
+    machine: singleFactory('machine')
   }
 };
 

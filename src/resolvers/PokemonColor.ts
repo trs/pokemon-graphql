@@ -1,5 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
+import { listFactory, singleFactory } from './utils/queryFactory';
+
 import type { PokemonColor } from '../generated/graphql';
 import type { Context } from './utils/types';
 
@@ -10,6 +12,11 @@ const resolver: IResolvers = {
         return dataSources.pokemonAPI.pokemonSpecies(species.name);
       })
     }
+  },
+
+  Query: {
+    pokemonColorList: listFactory('pokemonColorList'),
+    pokemonColor: singleFactory('pokemonColor')
   }
 };
 

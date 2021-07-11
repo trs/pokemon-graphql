@@ -23,4 +23,16 @@ export default gql`
     back_default: String!
     back_shiny: String!
   }
+
+type Query {
+  pokemonFormList(limit: Int!, offset: Int!): PaginationListPokemonForm
+  pokemonForm(id: Int!): PokemonForm
+}
+
+type PaginationListPokemonForm{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [PokemonForm!]!
+}
 `;

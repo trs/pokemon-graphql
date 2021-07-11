@@ -7,4 +7,16 @@ export default gql`
     moves: [Move!]!
     descriptions: [Description!]!
   }
+
+type Query {
+  moveCategoryList(limit: Int!, offset: Int!): PaginationListMoveCategory
+  moveCategory(id: Int!): MoveCategory
+}
+
+type PaginationListMoveCategory{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [MoveCategory!]!
+}
 `;

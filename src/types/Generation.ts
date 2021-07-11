@@ -12,4 +12,16 @@ export default gql`
     types: [Type!]!
     version_groups: [VersionGroup!]!
   }
+
+  type Query {
+    generationList(limit: Int!, offset: Int!): PaginationListGeneration
+    generation(id: Int!): Generation
+  }
+
+  type PaginationListGeneration{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [Generation!]!
+  }
 `;

@@ -7,4 +7,16 @@ export default gql`
     order: Int!
     names: [Name!]!
   }
+
+  type Query {
+    encounterMethodList(limit: Int!, offset: Int!): PaginationListEncounterMethod
+    encounterMethod(id: Int!): EncounterMethod
+  }
+
+  type PaginationListEncounterMethod{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [EncounterMethod!]!
+  }
 `

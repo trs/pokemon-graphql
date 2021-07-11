@@ -1,6 +1,7 @@
 import type { IResolvers } from 'apollo-server';
 
 import { getAPIResourceID } from './utils/getAPIResourcePath';
+import { listFactory, singleFactory } from './utils/queryFactory';
 
 import type { Item, ItemHolderPokemon, ItemHolderPokemonVersionDetail } from '../generated/graphql';
 import type { Context } from './utils/types';
@@ -34,6 +35,11 @@ const resolver: IResolvers = {
     version: async (parent: ItemHolderPokemonVersionDetail, _args, {dataSources}: Context) => {
       return dataSources.pokemonAPI.version(parent.version.name);
     },
+  },
+
+  Query: {
+    itemList: listFactory('itemList'),
+    item: singleFactory('item')
   }
 };
 

@@ -7,4 +7,16 @@ export default gql`
     move: Move!
     version_group: VersionGroup!
   }
+
+type Query {
+  machineList(limit: Int!, offset: Int!): PaginationListMachine
+  machine(id: Int!): Machine
+}
+
+type PaginationListMachine{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [Machine!]!
+}
 `;

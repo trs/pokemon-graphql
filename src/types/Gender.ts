@@ -12,4 +12,16 @@ export default gql`
     rate: Int!
     pokemon_species: PokemonSpecies!
   }
+
+  type Query {
+    genderList(limit: Int!, offset: Int!): PaginationListGender
+    gender(id: Int!): Gender
+  }
+
+  type PaginationListGender{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [Gender!]!
+  }
 `

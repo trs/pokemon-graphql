@@ -16,4 +16,16 @@ export default gql`
     entry_number: Int!
     pokemon_species: PokemonSpecies!
   }
+
+type Query {
+  pokedexList(limit: Int!, offset: Int!): PaginationListPokedex
+  pokedex(id: Int!): Pokedex
+}
+
+type PaginationListPokedex{
+    offset: Int
+    limit: Int
+    count: Int
+  list: [Pokedex!]!
+}
 `;

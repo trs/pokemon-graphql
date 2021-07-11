@@ -7,4 +7,16 @@ export default gql`
     names: [Name!]!
     pokemon_species: [PokemonSpecies!]!
   }
+
+  type Query {
+    evolutionTriggerList(limit: Int!, offset: Int!): PaginationListEvolutionTrigger
+    evolutionTrigger(id: Int!): EvolutionTrigger
+  }
+
+  type PaginationListEvolutionTrigger{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [EvolutionTrigger!]!
+  }
 `

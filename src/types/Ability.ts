@@ -29,4 +29,16 @@ export default gql`
     slot: Int!
     pokemon: Pokemon!
   }
+
+  type Query {
+    abilityList(limit: Int!, offset: Int!): PaginationListAbility
+    ability(id: Int!): Ability
+  }
+
+  type PaginationListAbility{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [Ability!]!
+  }
 `;

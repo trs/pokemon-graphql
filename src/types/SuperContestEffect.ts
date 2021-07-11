@@ -7,4 +7,16 @@ export default gql`
     flavor_text_entries: [FlavorText!]!
     moves: [Move!]!
   }
+
+  type Query {
+    superContestEffectList(limit: Int!, offset: Int!): PaginationListSuperContestEffect
+    superContestEffect(id: Int!): SuperContestEffect
+  }
+
+  type PaginationListSuperContestEffect{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [SuperContestEffect!]!
+  }
 `

@@ -5,4 +5,16 @@ export default gql`
     game_index: Int!
     generation: Generation!
   }
+
+  type Query {
+    generationGameIndexList(limit: Int!, offset: Int!): PaginationListGenerationGameIndex
+    generationGameIndex(id: Int!): GenerationGameIndex
+  }
+
+  type PaginationListGenerationGameIndex{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [GenerationGameIndex!]!
+  }
 `;

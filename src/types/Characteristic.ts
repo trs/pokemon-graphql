@@ -8,4 +8,16 @@ export default gql`
     highest_stat: Stat!
     descriptions: [Description!]!
   }
+
+  type Query {
+    characteristicList(limit: Int!, offset: Int!): PaginationListCharacteristic
+    characteristic(id: Int!): Characteristic
+  }
+
+  type PaginationListCharacteristic{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [Characteristic!]!
+  }
 `;

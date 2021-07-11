@@ -72,4 +72,16 @@ export default gql`
     type: Type!
     version_group: VersionGroup!
   }
+
+  type Query {
+    moveList(limit: Int!, offset: Int!): PaginationListMove
+    move(id: Int!): Move
+  }
+
+  type PaginationListMove{
+    offset: Int
+    limit: Int
+    count: Int
+    list: [Move!]!
+  }
 `;
